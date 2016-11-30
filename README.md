@@ -14,4 +14,10 @@ To start the development server:
 npm start
 ```
 
+Firebase hosting:
+
+```
+https://buyflix-final-a1e13.firebaseapp.com
+```
+
 For educational purposes only.
