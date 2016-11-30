@@ -161,7 +161,8 @@ var App = React.createClass({
   },
   resetMovieListClicked: function() {
     this.setState({
-      movies: movieData.sort(this.movieCompareByReleased)
+      movies: movieData.sort(this.movieCompareByReleased),
+      currentView: 'latest'
     })
   },
   viewChanged: function(view) {
