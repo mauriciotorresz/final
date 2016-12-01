@@ -160,23 +160,30 @@ var App = React.createClass({
     })
   },
   resetMovieListClicked: function() {
+  if (this.state.currentView === 'latest') {
     this.setState({
       movies: movieData.sort(this.movieCompareByReleased),
-      currentView: 'latest'
-    })
+      currentMovie: null
+    });
+  }
+  else if (this.state.currentView === 'alpha') {
+    this.setState({
+      movies: movieData.sort(this.movieCompareByTitle),
+    });
+  }
   },
   viewChanged: function(view) {
     if (view === 'latest') {
       this.setState({
         currentView: view,
-        movies: movieData.sort(this.movieCompareByReleased),
+        movies: this.state.movies.sort(this.movieCompareByReleased),
         currentMovie: null
       });
     }
     if (view === 'alpha') {
       this.setState({
         currentView: view,
-        movies: movieData.sort(this.movieCompareByTitle),
+        movies: this.state.movies.sort(this.movieCompareByTitle),
         currentMovie: null
       });
     }
